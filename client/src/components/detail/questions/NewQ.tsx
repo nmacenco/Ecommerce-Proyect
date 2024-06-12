@@ -25,14 +25,14 @@ const NewQ=({ProductId}:Prop):JSX.Element=>{
     return(
         <Styled.container>
             <h5 >
-                Ask a question!
+                Write your question.
             </h5>
 
             <Styled.form onSubmit={createBlock} >
                 <input type='text' placeholder="Title..." name="title"/>
                 <textarea placeholder="Question..." name="body"/>
                 <div>
-                    <button>Save</button>
+                    <button>Send</button>
                 </div>
             </Styled.form>
         </Styled.container>

@@ -8,7 +8,7 @@ import { First, Fourth, Second, Select, Third } from "./OrderAdminRowStyles";
 import swal from "sweetalert";
 
 interface Detail_Props {
-  id: number;
+  productId: number;
   productName: string;
   quantity: number;
   amount: number;
@@ -30,7 +30,7 @@ export interface STATUS {
   email_address: string;
 }
 
-const statusArray: string[] = ['BILLED', 'CANCELED', 'DISPATCHED', 'DELIVERED', 'FINISHED']
+const statusArray: string[] = ['BILLED', 'CANCELED', 'DISPATCHED', 'FINISHED']
 // const OrderAdminRow = ({ id, status, total, detail }: Props): JSX.Element => {
 
 
@@ -68,17 +68,17 @@ const OrderAdminRow = ({ id, status, total, billing_address, details, email_addr
     <tbody>
       <tr>
         <Second scope="row"><Select
-            defaultValue={`${status}`}
-            className="form-select"
-            onChange={(e) => handleChange(e)}
-          >
-            {
-              statusArray.map((s, i: number) => {
-                return <option key={i} value={`${s}`} > {s} </option>
-              })
-            } 
+          defaultValue={`${status}`}
+          className="form-select"
+          onChange={(e) => handleChange(e)}
+        >
+          {
+            statusArray.map((s, i: number) => {
+              return <option key={i} value={`${s}`} > {s} </option>
+            })
+          }
 
-          </Select></Second>
+        </Select></Second>
         <First>{email_address}</First>
         <First>{billing_address}</First>
         <Third>${total}</Third>
@@ -88,7 +88,7 @@ const OrderAdminRow = ({ id, status, total, billing_address, details, email_addr
         details.map((product: Detail_Props, i: number) => {
           return <tr key={i} id={`collapse${id}`} className="accordion-collapse collapse align-items-center" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <td><Img src={product.image} /></td>
-            <td><Link className="text-decoration-none" to={`/detail/${id}`}>{product.productName}</Link></td>
+            <td><Link className="text-decoration-none" to={`/detail/${product.productId}`}>{product.productName}</Link></td>
             <td>${product.amount}</td>
             <td>Quantity: {product.quantity}</td>
           </tr>

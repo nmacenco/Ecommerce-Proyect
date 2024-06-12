@@ -163,7 +163,7 @@ export interface Order {
   status: string;
   user: string;
   shipping_address: string;
-  paidAt:string;
+  paidAt: string;
   details: any[];
   userID: number;
 }

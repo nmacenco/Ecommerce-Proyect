@@ -20,7 +20,7 @@ require("dotenv").config();
 
 //Adding middleware and configuring server
 server.name = "API";
-const allowedOrigin = process.env.ORIGIN;
+const allowedOrigin = "*";
 const options = {
   origin: allowedOrigin,
   methods: "GET,HEAD,PUT,POST,DELETE",

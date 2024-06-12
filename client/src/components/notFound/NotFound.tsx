@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { productNotFound, resetPoducts } from "../../redux/actions/products";
 import { NotFoundContainer } from "./NotFoundStyles";
+
 export interface NOT_FOUND {
     eliminateFilters: () => void;
 }
 
-const NotFound = ({ eliminateFilters }: any) => {
+const NotFound = ({ eliminateFilters }: NOT_FOUND): JSX.Element => {
     const dispatch = useDispatch()
     useEffect(() => {
         eliminateFilters()

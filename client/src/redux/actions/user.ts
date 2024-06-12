@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { RESET_PASSWORD } from "../../components/users/ResetForgotPasswords";
-import { PWD } from "../../components/users/ResetPwd";
+import { RESET_PASSWORD } from "../../components/users/forgotPassword/ResetForgotPasswords";
+import { PWD } from "../../components/users/changePassword/ResetPwd";
 import { TYPES_USER} from "../interface";
 import swal from "sweetalert";
 const URL_USER = "/api";

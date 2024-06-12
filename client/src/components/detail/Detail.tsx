@@ -220,7 +220,7 @@ export default function Detail() {
             <p>{product.description}</p>
           </div>
           <div className="tab-pane fade m-2" id="profile">
-            {product.reviews &&
+            {product.reviews && product.reviews.length > 0 ?
               product.reviews.map((rew, i) => {
                 return (
                   <Review
@@ -231,11 +231,11 @@ export default function Detail() {
                     texto={rew.review.description}
                   />
                 );
-              })}
+              }) : <span>Not reviews done yet.</span>}
           </div>
           <div className="tab-pane fade m-2" id="questions">
             {user ? <NewQ ProductId={product.id!} /> : null}
-            {product.questions &&
+            {product.questions && product.questions.length > 0 ?
               product.questions.map((question, i) => {
                 return (
                   <Question
@@ -247,7 +247,7 @@ export default function Detail() {
                     idA={question.question.id}
                   />
                 );
-              })}
+              }) : <span>Not questions done yet.</span>}
           </div>
         </div>
       </Box>

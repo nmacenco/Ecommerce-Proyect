@@ -1,27 +1,20 @@
 import styled from "styled-components";
 
 const QuestionContainer = styled.div`
-  width: 100%;
-  margin-bottom: 20px;
+  padding:20px;
+  border: 0.5px solid grey;
+  width: 100%; 
+  margin-top: 10px;
+
 `;
 
 const QuestionContent = styled.div`
   width: 100%;
-  header {
-    width: 100%;
-    padding: 4px 10px;
-    height: 36px;
-    box-sizing: border-box;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
+
   main {
-    width: 100%;
-    height: calc(100% - 40px);
-    padding: 10px;
 
     .btn-reply {
-      margin: 10px 0px 0px 10px;
+      margin-top:10px;
       border: none;
       padding: 7px 12px;
     }
@@ -36,15 +29,14 @@ const QuestionContent = styled.div`
     textarea{
       padding: 7px 5px;
       outline: none;
-
     }
 
     div {
       direction: rtl;
 
       button {
+        margin-top:5px;
         border: none;
-        margin: 10px 20px 0px 0px;
         padding: 5px 10px;
         font-weight: bold;
       }
@@ -60,9 +52,7 @@ const QuestionContent = styled.div`
 `;
 
 const ShowQuestions = styled.div`
-  margin: 20px 15% 0% 5%;
   width: 80%;
-  padding-left:10px ;
 
   aside.show-answer {
     color: blue;
@@ -74,6 +64,7 @@ const ShowQuestions = styled.div`
 `;
 
 const response = styled.article`
+  margin-top: 10px;
   width: 100%;
 `;
 

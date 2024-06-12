@@ -27,7 +27,7 @@ export const reducerProduct = (
 
       action.payload.forEach((product) => {
         // console.log("ADD ITEM",product.name);
-        if (product.isActive === true) {
+        if (product.isActive === true && product.stock > 0) {
           newTable.addItem(product.name);
         }
       });

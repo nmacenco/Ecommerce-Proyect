@@ -626,7 +626,7 @@ const updatePaypalOrder = async (req, res) => {
       await sendMailOrder(
         email_address,
         'Confirmation Order Advice',
-        `<p>Your purchase order number ${id} has been canceled with the Paypal order ${orderIdPayment}. </p>`
+        `<p>Your purchase order number ${id} has been payed with the Paypal order ${orderIdPayment}. </p>`
       );
 
       res.status(201).send({ successMsg: 'Order Paid', data: updatedOrder });

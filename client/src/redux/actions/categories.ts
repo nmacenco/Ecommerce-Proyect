@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Dispatch } from "redux";
-import { FORM_SUB } from "../../components/products/categories/create/CreateCategories";
+import { FORM_SUB } from "../../components/admin/categoriesAdmin/create/CreateCategories";
 
 import { Category, TYPES_CATEGORIES } from "../interface";
 

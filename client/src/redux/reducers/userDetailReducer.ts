@@ -1,4 +1,4 @@
-import { EDIT_USER } from "../../components/users/EditUserAccount";
+import { EDIT_USER } from "../../components/users/editAccount/EditUserAccount";
 import { IUser_Detail, TYPES_USER, UserActions } from "../interface";
 
 export interface USER_STATE {

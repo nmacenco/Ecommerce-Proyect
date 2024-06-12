@@ -192,7 +192,6 @@ const getSingleProduct = async (req, res) => {
                 })
               : [],
         };
-        console.log('producto solo: ', singleProduct);
         res
           .status(200)
           .send({ successMsg: 'Here is your product.', data: singleProduct });

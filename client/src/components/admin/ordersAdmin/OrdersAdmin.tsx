@@ -24,7 +24,7 @@ const OrdersAdmin = (): JSX.Element => {
     dispatch(orderHistoryStatus(e.target.value))
   }
 
-  const statusArray: string[] = ['BILLED', 'CANCELED', 'DISPATCHED', 'FINISHED']
+  const statusArray: string[] = ['BILLED', 'CANCELED', 'DISPATCHED', 'FINISHED', 'ALL ORDERS']
 
   return (
     <Container>
@@ -43,32 +43,32 @@ const OrdersAdmin = (): JSX.Element => {
             }
           </select>
         </div>
-          {orders.length > 0 ? <>
-        <Overflow>
-        <Table className="table table-hover mt-5">
-          <thead>
-            <tr>
-              <th scope="col">STATUS</th>
-              <th scope="col">EMAIL</th>
-              <th scope="col">ADRESS</th> 
-              <th scope="col">TOTAL</th>
-            </tr>
-          </thead>
-            {orders.map(order => {
+        {orders.length > 0 ? <>
+          <Overflow>
+            <Table className="table table-hover mt-5">
+              <thead>
+                <tr>
+                  <th scope="col">STATUS</th>
+                  <th scope="col">EMAIL</th>
+                  <th scope="col">ADRESS</th>
+                  <th scope="col">TOTAL</th>
+                </tr>
+              </thead>
+              {orders.map(order => {
                 return <OrderAdminRow
-                key={order.id}
-                id={order.id}
-                total={order.total_amount}
-                email_address={order.email_address}
-                status={order.status}
-                details={order.details}
-                billing_address={order.shipping_address}
+                  key={order.id}
+                  id={order.id}
+                  total={order.total_amount}
+                  email_address={order.email_address}
+                  status={order.status}
+                  details={order.details}
+                  billing_address={order.shipping_address}
                 />
-            })}
-        </Table>
-        </Overflow>
+              })}
+            </Table>
+          </Overflow>
         </> : <h5 className="text-center mt-5 pt-5">Not orders done yet.</h5>}
-        
+
       </Accordion>
 
     </Container>
